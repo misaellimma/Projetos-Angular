@@ -1,0 +1,17 @@
+<h1 class="py-3">Lista de Provincias</h1>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nome</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let provincia of provincias">
+            <th scope="col">{{provincia.id}}</th>
+            <th scope="col">{{provincia.nome}}</th>
+        </tr>
+    </tbody>
+    
+</table>

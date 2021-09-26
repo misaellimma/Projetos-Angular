@@ -1,0 +1,23 @@
+<h1 class="py-3">Lista de Eventos</h1>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Descricao</th>
+        <th scope="col">Data</th>
+        <th scope="col">Id Cidade</th>
+        <th scope="col">Id Modalidade</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let evento of eventos">
+            <th scope="col">{{evento.id}}</th>
+            <th scope="col">{{evento.descricao}}</th>
+            <th scope="col">{{evento.data}}</th>
+            <th scope="col">{{evento.id_cidade}}</th>
+            <th scope="col">{{evento.id_modalidade}}</th>
+        </tr>
+    </tbody>
+    
+</table>

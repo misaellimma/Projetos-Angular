@@ -1,0 +1,20 @@
+<h1 class="py-3">Lista de Atletas</h1>
+
+
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Modalidade</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let atleta of atletas">
+            <th scope="col">{{atleta.id}}</th>
+            <th scope="col">{{atleta.nome}}</th>
+            <th scope="col">{{atleta.id_modalidade}}</th>
+        </tr>
+    </tbody>
+    
+</table>

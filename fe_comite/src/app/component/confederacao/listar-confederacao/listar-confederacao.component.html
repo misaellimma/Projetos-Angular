@@ -1,0 +1,18 @@
+<h1 class="py-3">Lista de Confederações</h1>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Comite</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let confederacao of confederacoes">
+            <th scope="col">{{confederacao.id}}</th>
+            <th scope="col">{{confederacao.nome}}</th>
+            <th scope="col">{{confederacao.id_comite}}</th>
+        </tr>
+    </tbody>
+</table>

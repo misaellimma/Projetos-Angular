@@ -1,0 +1,18 @@
+<h1 class="py-3">Lista de Cidades</h1>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Provincia</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let cidade of cidades">
+            <td scope="col">{{cidade.id}}</td>
+            <td scope="col">{{cidade.nome}}</td>
+            <td scope="col">{{cidade.id_provincia}}</td>
+        </tr>
+    </tbody>
+</table>

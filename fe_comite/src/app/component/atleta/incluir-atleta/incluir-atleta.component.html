@@ -1,0 +1,43 @@
+<h1 class="py-3 text-center">Incluir Atleta</h1>
+
+<div class="container my-3">
+    <div class="card" style="width: 32rem; margin: auto; float: none;">
+        <div class="card-body register-form">
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                <div>
+                    <div class="form-group mb-3">
+                        <label class="form-label" for="nome">Nome</label>
+                        <input
+                        type="text"
+                        formControlName="nome"
+                        class="form-control"
+                        name="nome"
+                        [ngClass]="{'is-invalid': submitted && f.nome.errors}"
+                        />
+                        <div *ngIf="submitted && f.nome.errors" class="invalid-feedback">
+                            <div *ngIf="f.nome.errors.required">Nome é requerido</div>
+                            <div *ngIf="f.nome.errors.minlength">O nome precisa ter no minuno 3 caracteres</div>
+                        </div>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label class="form-label" for="id_modalidade">Id Modalidade</label>
+                        <input
+                        type="number"
+                        formControlName="id_modalidade"
+                        class="form-control"
+                        
+                        name="id_modalidade"
+                        [ngClass]="{'is-invalid': submitted && f.id_modalidade.errors}"
+                        />
+                        <div *ngIf="submitted && f.id_modalidade.errors" class="invalid-feedback">
+                            <div *ngIf="f.id_modalidade.errors.required">Modalidade é requerido</div>
+                            <div *ngIf="f.id_modalidade.errors.minlength">Nao pode ser vazio</div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-success my-3">Submit</button>
+                    
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
