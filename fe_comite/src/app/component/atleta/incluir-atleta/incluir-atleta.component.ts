@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Atleta } from 'src/app/entities/atleta';
+import { Modalidade } from 'src/app/entities/modalidadde';
+import { ModalidadeService } from '../../../services/modalidade.service';
 import { AtletaService } from 'src/app/services/atleta.service';
+
 
 @Component({
   selector: 'app-incluir-atleta',
@@ -11,14 +14,17 @@ import { AtletaService } from 'src/app/services/atleta.service';
 export class IncluirAtletaComponent implements OnInit {
 
   form: FormGroup
+  resposta = ""
+  submitted = false;
+
+  modalidades: Modalidade[] = []
 
   atleta: Atleta = {
     nome: '',
     id_modalidade: ''
   }
-  submitted = false;
 
-  constructor(private atletaService: AtletaService,private formBuilder: FormBuilder) { 
+  constructor(private atletaService: AtletaService,private formBuilder: FormBuilder, private serviceModalidade: ModalidadeService) { 
     this.form = this.formBuilder.group(
       {
         nome: ['', [
@@ -34,6 +40,10 @@ export class IncluirAtletaComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.serviceModalidade.listar().subscribe(
+      data => {this.modalidades = data},
+      error => console.log("Erro ao listar modalidade: ", error)
+    )
   }
 
   get f():{[key: string]:AbstractControl}{
@@ -59,7 +69,8 @@ export class IncluirAtletaComponent implements OnInit {
     this.atletaService.create(this.atleta)
       .subscribe(
         response => {
-          console.log(response)
+          this.resposta = response
+          console.log(this.resposta)
           this.submitted = true;
         },
         error => {

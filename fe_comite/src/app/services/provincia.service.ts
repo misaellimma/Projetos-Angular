@@ -12,7 +12,7 @@ export class ProvinciaService {
 
   constructor(private _http: HttpClient) { }
 
-  listar(): Observable<any>{
+  public listar(): Observable<any>{
     return this._http.get<Provincia[]>("http://localhost:8080/provincia/listar/");
 }
 

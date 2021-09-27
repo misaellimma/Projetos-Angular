@@ -5,6 +5,7 @@ import { Cidade } from '../entities/cidade';
 
 const urlListar = "http://localhost:8080/cidade/listar"
 const urlIncluir = "http://localhost:8080/cidade/incluir"
+const urlAlterar = "http://localhost:8080/cidade/alterar"
 
 @Injectable({
   providedIn: 'root'
@@ -24,5 +25,9 @@ export class CidadeService {
 
   create(data:any): Observable<any>{
     return this.http.post(urlIncluir,data);
+  }
+
+  update(id:any,data:any): Observable<any>{
+    return this.http.put(`${urlAlterar}/${id}`, data);
   }
 }

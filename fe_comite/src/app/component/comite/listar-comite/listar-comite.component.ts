@@ -17,7 +17,7 @@ export class ListarComiteComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.servicoComite.listar().subscribe(
+    this.servicoComite.getAll().subscribe(
       data => { this.comites = data},
       error => console.log("Erro ao listar atleta", error)
     )

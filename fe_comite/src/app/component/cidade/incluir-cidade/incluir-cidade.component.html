@@ -19,23 +19,17 @@
                             <div *ngIf="f.nome.errors.minlength">O nome precisa ter no minuno 3 caracteres</div>
                         </div>
                     </div>
+                    <label class="form-label" for="nome">Selecione uma província:</label>
                     <div class="form-group mb-3">
-                        <label class="form-label" for="id_provincia">Id Provincia</label>
-                        <input
-                        type="number"
-                        formControlName="id_provincia"
-                        class="form-control"
-                        
-                        name="id_provincia"
-                        [ngClass]="{'is-invalid': submitted && f.id_provincia.errors}"
-                        />
-                        <div *ngIf="submitted && f.id_provincia.errors" class="invalid-feedback">
-                            <div *ngIf="f.id_provincia.errors.required">Provincia é requerido</div>
-                            <div *ngIf="f.id_provincia.errors.minlength">Nao pode ser vazio</div>
+                        <select formControlName="id_provincia" class="form-select" >dfsf
+                            <option> </option>
+                            <option *ngFor="let provincia of provincias" value="{{provincia.id}}" name="id_provincia">{{provincia.nome}}</option>
+                        </select>
+                        <div *ngIf="f.id_provincia.errors" class="invalid-feedback">
+                            <div *ngIf="f.id_provincia.errors.minlength">Nome é requerido</div>
                         </div>
-                    </div>
+                    </div>                    
                     <button type="submit" class="btn btn-success my-3">Submit</button>
-                    
                 </div>
             </form>
         </div>

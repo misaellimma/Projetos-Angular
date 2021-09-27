@@ -10,6 +10,7 @@ import { ListarModalidadeComponent } from './component/modalidade/listar-modalid
 import { ListarConfederacaoComponent } from './component/confederacao/listar-confederacao/listar-confederacao.component';
 import { IncluirAtletaComponent } from './component/atleta/incluir-atleta/incluir-atleta.component';
 import { IncluirCidadeComponent } from './component/cidade/incluir-cidade/incluir-cidade.component';
+import { IncluirComiteComponent } from './component/comite/incluir-comite/incluir-comite.component';
 
 
 const routes: Routes = [
@@ -22,7 +23,9 @@ const routes: Routes = [
   {path: 'modalidade/listar', component: ListarModalidadeComponent},
   {path: 'confederacao/listar', component: ListarConfederacaoComponent},
   {path: 'atleta/incluir', component: IncluirAtletaComponent},
-  {path: 'cidade/incluir', component: IncluirCidadeComponent}
+  {path: 'cidade/incluir', component: IncluirCidadeComponent},
+  {path: 'comite/incluir', component: IncluirComiteComponent}
+
 
 ];
 

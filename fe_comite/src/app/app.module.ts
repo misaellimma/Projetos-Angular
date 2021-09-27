@@ -16,6 +16,7 @@ import { ListarConfederacaoComponent } from './component/confederacao/listar-con
 import { FormsModule } from '@angular/forms';
 import { IncluirAtletaComponent } from './component/atleta/incluir-atleta/incluir-atleta.component';
 import { IncluirCidadeComponent } from './component/cidade/incluir-cidade/incluir-cidade.component';
+import { IncluirComiteComponent } from './component/comite/incluir-comite/incluir-comite.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { IncluirCidadeComponent } from './component/cidade/incluir-cidade/inclui
     ListarModalidadeComponent,
     ListarConfederacaoComponent,
     IncluirAtletaComponent,
-    IncluirCidadeComponent
+    IncluirCidadeComponent,
+    IncluirComiteComponent
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,4 @@
-<h1 class="py-3 text-center">Incluir Atleta</h1>
+<h1 class="py-3 text-center">Incluir Comitê</h1>
 
 <div class="container my-3">
     <div class="card" style="width: 32rem; margin: auto; float: none;">
@@ -18,15 +18,8 @@
                             <div *ngIf="f.nome.errors.required">Nome é requerido</div>
                             <div *ngIf="f.nome.errors.minlength">O nome precisa ter no minuno 3 caracteres</div>
                         </div>
-                    </div>
-                    <div class="form-group mb-3">
-                        <select class="form-select" formControlName="id_modalidade">
-                            <option selected>Selecione uma província</option>
-                            <option *ngFor="let modalidade of modalidades" for="id_modalidade" value="{{modalidade.id}}" name="id_modalidade">{{modalidade.descricao}}</option>
-                        </select>
-                    </div> 
+                    </div>                
                     <button type="submit" class="btn btn-success my-3">Submit</button>
-                    
                 </div>
             </form>
         </div>

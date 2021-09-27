@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CidadeService } from '../../../services/cidade.service';
 import { Cidade } from '../../../entities/cidade';
+import { ProvinciaService } from '../../../services/provincia.service';
+import { Provincia } from '../../../entities/provincia';
 //import Validation from './utils/Validation';
 
 @Component({
@@ -18,7 +20,9 @@ export class IncluirCidadeComponent implements OnInit {
       nome: '', 
       id_provincia: ''
     }
-  constructor(private formBuilder: FormBuilder, private cidadeService: CidadeService) { 
+
+    provincias: Provincia[] = []
+  constructor(private formBuilder: FormBuilder, private cidadeService: CidadeService, private provinciaService:ProvinciaService) { 
     this.form = this.formBuilder.group(
       {
         nome: ['', [
@@ -34,6 +38,10 @@ export class IncluirCidadeComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.provinciaService.listar().subscribe(
+      data => {this.provincias = data},
+      error => console.log("Erro ao listar provincia", error)
+    )
   }
 
   get f():{[key: string]:AbstractControl}{
@@ -60,6 +68,7 @@ export class IncluirCidadeComponent implements OnInit {
       .subscribe(
         response => {
           this.resposta =response
+          alert(response)
           console.log(response)
         },
         error => {
